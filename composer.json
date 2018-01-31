@@ -1,5 +1,5 @@
 {
-    "name": "dehydr8/fmr-decoder",
+    "name": "dehydr8/fmr_decoder",
     "description": "Decoder for FMR files",
     "keywords": ["fmr", "fingerprint", "decoder", "biometric"],
     "license": "DBAD",
