@@ -124,15 +124,16 @@ class Decoder {
       $view["num_minutae"] = $numberOfMinutae;
 
       for ($j=0; $j<$numberOfMinutae; $j++) {
+        $this->log("\t\t[-- $j --]\n");
+        
         $mX = $this->readShort();
-        $mType = ($mX >> 6) & 0x03;
+        $mType = ($mX >> 14) & 0x03;
 
-        $mX = $mX & 0x3F;
-        $mY = $this->readShort() & 0x3F;
+        $mX = $mX & 0x3FFF;
+        $mY = $this->readShort() & 0x3FFF;
         $mTheta = $this->readByte();
         $mQuality = $this->readByte();
 
-        $this->log("\t\t[-- $j --]\n");
 
         $this->log("\t\tmType = $mType");
         $this->log("\t\tmX = $mX");
